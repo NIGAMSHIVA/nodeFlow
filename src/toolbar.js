@@ -1,27 +1,23 @@
 // toolbar.js
 
 import { DraggableNode } from './draggableNode';
+import './PipelineToolbar.css';
 
 export const PipelineToolbar = () => {
-
     return (
-        <div style={{ padding: '10px' }}>
-            <div style={{ marginTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+        <div className="toolbar">
+            {/* Core Nodes */}
+            <DraggableNode type="customInput" label="Input" className="tool-btn" />
+            <DraggableNode type="llm" label="LLM" className="tool-btn" />
+            <DraggableNode type="customOutput" label="Output" className="tool-btn" />
+            <DraggableNode type="text" label="Text" className="tool-btn" />
 
-                <DraggableNode type='customInput' label='Input' />
-                <DraggableNode type='llm' label='LLM' />
-                <DraggableNode type='customOutput' label='Output' />
-                <DraggableNode type='text' label='Text' />
-
-                {/* 5 New Nodes */}
-                <DraggableNode type='add' label='Add' />
-                <DraggableNode type='random' label='Random' />
-                <DraggableNode type='delay' label='Delay' />
-                <DraggableNode type='condition' label='Condition' />
-                <DraggableNode type='formatter' label='Formatter' />
-
-            </div>
+            {/* Added 5 New Nodes */}
+            <DraggableNode type="add" label="Add" className="tool-btn" />
+            <DraggableNode type="random" label="Random" className="tool-btn" />
+            <DraggableNode type="delay" label="Delay" className="tool-btn" />
+            <DraggableNode type="condition" label="Condition" className="tool-btn" />
+            <DraggableNode type="formatter" label="Formatter" className="tool-btn" />
         </div>
     );
 };
-
